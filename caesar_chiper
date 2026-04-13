@@ -1,0 +1,14 @@
+text=input("what text would you like to change: ")
+shift = int(input("Shift by how much: "))
+def caesar_cipher(text, shift):
+    result = ""
+    for char in text:
+        if char.isupper():
+            result += chr((ord(char) - ord('A') + shift) % 26 + ord('A'))
+        elif char.islower():
+            result += chr((ord(char) - ord('a') + shift) % 26 + ord('a'))
+        else:
+            result += char
+    return result
+
+print(caesar_cipher(text,shift ))
